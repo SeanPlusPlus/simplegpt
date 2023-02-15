@@ -3,7 +3,7 @@ import Head from 'next/head'
 const title = "Simple GPT"
 const description = "Ask GPT to explain anything in simple terms"
 const domain = "simple-gpt.vercel.app"
-const site = "https://simple-gpt.vercel.app/"
+const site = `https://${domain}`
 const image = `${site}/simple.png`
 
 export default function Header() {
