@@ -32,6 +32,12 @@ export default (state, action) => {
         alert: action.payload,
       }
 
+    case 'UPDATE_OUTPUT':
+      return {
+        ...state,
+        output: action.payload,
+      }
+
     default:
       return state;
   }

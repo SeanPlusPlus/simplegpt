@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Nav from '../components/Nav'
 import Alert from '../components/Alert'
 import Input from '../components/Input'
+import Output from '../components/Output'
 import Footer from '../components/Footer'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <main className="mb-auto">
           <Alert />
           <Input />
+          <Output />
         </main>
         <Footer />
       </div>

@@ -13,6 +13,7 @@ const initialState = {
     text: 'Ask GPT to explain something in simple terms',
     status: 'info',
   },
+  output: null,
   isSubmitting: null,
 }
 
@@ -52,6 +53,13 @@ export const GlobalProvider = ({
     });
   }
 
+  function setOutput(data) {
+    dispatch({
+      type: 'UPDATE_OUTPUT',
+      payload: data
+    });
+  }
+
   useEffect(() => {
     log('state', 'rgb(217, 38, 169)', state)
   }, [state])
@@ -63,6 +71,7 @@ export const GlobalProvider = ({
         setInputText,
         setIsSubmitting,
         setAlert,
+        setOutput,
       }
     } > {
       children
