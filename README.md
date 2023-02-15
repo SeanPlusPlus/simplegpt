@@ -1,5 +1,5 @@
 # Simple GPT 
 
-https://simplegpt.vercel.app/
+https://simple-gpt.vercel.app/
 
 Ask GPT to explain something in simple terms
