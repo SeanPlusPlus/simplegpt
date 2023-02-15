@@ -33,7 +33,6 @@ const handleInput = async (req, res) => {
     max_tokens: 256,
   });
   
-  // The question object
   const output = baseCompletion.data.choices.pop()
 
   res.status(200).json({
