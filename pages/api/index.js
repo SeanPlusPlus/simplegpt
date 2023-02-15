@@ -29,7 +29,7 @@ const handleInput = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     prompt,
     model: 'text-davinci-003',
-    temperature: 0.7,
+    temperature: 0.3,
     max_tokens: 256,
   });
   
