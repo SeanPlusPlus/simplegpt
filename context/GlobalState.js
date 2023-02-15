@@ -10,7 +10,7 @@ const initialState = {
   modal: {},
   inputText: '',
   alert: {
-    text: 'Ask GPT to explain something in simple terms',
+    text: 'Ask GPT to explain anything in simple terms',
     status: 'info',
   },
   output: null,
