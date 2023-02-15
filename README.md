@@ -1,5 +1,5 @@
-# GPT Foo
+# Simple GPT 
 
-https://gptfoo.vercel.app/
+https://simplegpt.vercel.app/
 
-Test whether a block of text was written by an AI or a human
+Ask GPT to explain something in simple terms
