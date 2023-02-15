@@ -24,7 +24,7 @@ const handleInput = async (req, res) => {
     return
   }
 
-  const prompt = `Explain "${inputText}" in simple terms`
+  const prompt = `Explain ${inputText} in simple terms`
 
   const baseCompletion = await openai.createCompletion({
     prompt,
