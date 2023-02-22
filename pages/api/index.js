@@ -3,6 +3,10 @@ import { Configuration, OpenAIApi } from 'openai'
 
 require('dotenv').config()
 
+const MAX_TOKENS = 1024
+const TEMPERATURE = 0.3
+const MODEL = 'text-davinci-003'
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 })
@@ -28,9 +32,9 @@ const handleInput = async (req, res) => {
 
   const baseCompletion = await openai.createCompletion({
     prompt,
-    model: 'text-davinci-003',
-    temperature: 0.3,
-    max_tokens: 256,
+    model: MODEL,
+    temperature: TEMPERATURE,
+    max_tokens: MAX_TOKENS,
   });
   
   const output = baseCompletion.data.choices.pop()
