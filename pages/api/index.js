@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from 'openai'
 require('dotenv').config()
 
 const MAX_TOKENS = 1024
-const TEMPERATURE = 0.3
+const TEMPERATURE = 0.1
 const MODEL = 'text-davinci-003'
 
 const configuration = new Configuration({
