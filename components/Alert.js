@@ -11,7 +11,7 @@ export default function Alert() {
   }
 
   return (
-    <div className="w-80 md:w-[32rem] m-auto pb-4 mt-6">
+    <div className="w-96 md:w-[32rem] m-auto mt-6 mb-4 pl-4 pr-4">
       <div className={getAlertType()}>
         <div>
           <span>

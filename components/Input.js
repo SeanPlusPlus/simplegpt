@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState'
 
 export default function Input() {
   const {
+    output,
     inputText,
     isSubmitting,
     setInputText,
@@ -32,16 +33,20 @@ export default function Input() {
     setOutput(r.data.output)
   }
 
+  if (output) {
+    return <></>
+  }
+
   return (
-    <div className="w-80 md:w-[32rem] m-auto pb-4 text-center">
+    <div className="w-96 md:w-[32rem] m-auto pb-4 pl-4 pr-4 text-center">
       <form onSubmit={handleSubmit}>
-        <input
-          className="w-full textarea textarea-bordered"
-          placeholder="Enter text here" 
-          onChange={(e) => handleChange(e)}
-          value={inputText}
-          disabled={(isSubmitting === true || isSubmitting === false) && "disabled"}
-        ></input>
+          <input
+            className="w-full textarea textarea-bordered"
+            placeholder="Enter text here" 
+            onChange={(e) => handleChange(e)}
+            value={inputText}
+            disabled={(isSubmitting === true || isSubmitting === false) && "disabled"}
+          ></input>
         <div>
           {isSubmitting === null && (
             <button className="btn btn-accent mt-4" >Submit</button>
