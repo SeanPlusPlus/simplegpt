@@ -38,7 +38,7 @@ export default function Input () {
   }
 
   return (
-    <div className='w-96 md:w-[32rem] m-auto pb-4 pl-4 pr-4 text-center'>
+    <div className='w-96 m-auto pb-4 pl-4 pr-4 text-center'>
       <form onSubmit={handleSubmit}>
         <input
           className='w-full textarea textarea-bordered'

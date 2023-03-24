@@ -22,7 +22,7 @@ export default function Input () {
   }
 
   return (
-    <div className='w-96 m-auto pb-4 py-4 text-center'>
+    <div className='w-96 m-auto pb-4 pl-4 pr-4 text-center'>
       <div className='card bg-neutral shadow-xl rounded'>
         <div className='card-body text-left'>
           <h2 className='card-title'>{inputText}</h2>
