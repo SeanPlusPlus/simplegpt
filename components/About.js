@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import { APP_TITLE } from '../constants'
 
 const About = () => {
-  const title = 'Simple GPT'
- 
   const {
     modal,
     setModal,
@@ -19,7 +18,7 @@ const About = () => {
         <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-4 top-4" onClick={handleClose}>✕</label>
         <h3 className="font-bold text-xl flex">
           <span className="text-2xl pb-4">
-            About {title}
+            About {APP_TITLE}
           </span>
         </h3>
         <div>
