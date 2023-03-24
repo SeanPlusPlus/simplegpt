@@ -6,7 +6,7 @@ import {
  } from '../constants'
 
 const site = `https://${APP_DOMAIN}`
-const image = `${site}/simple.png`
+const image = `${site}/image.png`
 
 export default function Header() {
   return (
