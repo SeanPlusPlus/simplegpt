@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { GlobalContext } from '../context/GlobalState'
+import { APP_TITLE } from '../constants'
 
 // modals 
 import About from './About'
@@ -31,7 +31,7 @@ const Nav = () => {
         <div className="flex-1">
           <Link href="/" passHref>
             <button className="btn btn-outline normal-case text-xl md:ml-2" onClick={handleRefresh}>
-              Simple GPT
+              {APP_TITLE}
             </button>
           </Link>
         </div>

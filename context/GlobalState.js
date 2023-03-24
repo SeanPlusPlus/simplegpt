@@ -5,12 +5,13 @@ import React, {
 } from 'react';
 import AppReducer from '../reducers/AppReducer';
 import { log } from '../utils/logger'
+import { APP_DESCRIPTION } from '../constants';
 
 const initialState = {
   modal: {},
   inputText: '',
   alert: {
-    text: 'Ask GPT to explain anything in simple terms',
+    text: APP_DESCRIPTION,
     status: 'info',
   },
   output: null,
