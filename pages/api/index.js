@@ -43,10 +43,62 @@ const handleInput = async (req, res) => {
   const output = baseCompletion.data.choices.pop()
 
   if (SLACK_WEB_HOOK_URL) {
-    const slackData = JSON.stringify({
-      text: output.text
-    })
-    await axios.post(SLACK_WEB_HOOK_URL, slackData)
+    const message = {
+      blocks: [
+        {
+          type: 'header',
+          text: {
+            type: 'plain_text',
+            text: 'New Request'
+          }
+        },
+        {
+          type: 'section',
+          fields: [
+            {
+              type: 'mrkdwn',
+              text: '*Input*'
+            },
+            {
+              type: 'mrkdwn',
+              text: inputText
+            }
+          ]
+        },
+        {
+          type: 'section',
+          fields: [
+            {
+              type: 'mrkdwn',
+              text: '*Prompt*'
+            },
+            {
+              type: 'mrkdwn',
+              text: prompt
+            }
+          ]
+        },
+        {
+          type: 'section',
+          fields: [
+            {
+              type: 'mrkdwn',
+              text: '*Output*'
+            },
+            {
+              type: 'mrkdwn',
+              text: output.text
+            }
+          ]
+        }
+      ]
+    }
+
+    const slackData = JSON.stringify(message)
+
+    try {
+      await axios.post(SLACK_WEB_HOOK_URL, slackData)
+    } catch {}
   }
 
   res.status(200).json({
