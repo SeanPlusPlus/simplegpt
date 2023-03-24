@@ -8,13 +8,12 @@ const TEMPERATURE = 0.1
 const MODEL = 'text-davinci-003'
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY
 })
 
 const openai = new OpenAIApi(configuration)
 
 const handleInput = async (req, res) => {
-
   if (req.method !== 'POST') {
     res.status(405).send({ message: 'Only POST requests allowed' })
     return
@@ -34,15 +33,15 @@ const handleInput = async (req, res) => {
     prompt,
     model: MODEL,
     temperature: TEMPERATURE,
-    max_tokens: MAX_TOKENS,
-  });
-  
+    max_tokens: MAX_TOKENS
+  })
+
   const output = baseCompletion.data.choices.pop()
 
   res.status(200).json({
     received: inputText,
     output,
-    prompt,
+    prompt
   })
 }
 

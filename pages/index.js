@@ -5,13 +5,13 @@ import Input from '../components/Input'
 import Output from '../components/Output'
 import Footer from '../components/Footer'
 
-export default function Home() {
+export default function Home () {
   return (
     <>
       <Header />
-      <div className="flex flex-col h-screen justify-between">
+      <div className='flex flex-col h-screen justify-between'>
         <Nav />
-        <main className="mb-auto">
+        <main className='mb-auto'>
           <Alert />
           <Input />
           <Output />

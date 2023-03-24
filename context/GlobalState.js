@@ -1,81 +1,84 @@
 import React, {
   createContext,
   useReducer,
-  useEffect,
-} from 'react';
-import AppReducer from '../reducers/AppReducer';
+  useEffect
+} from 'react'
+import AppReducer from '../reducers/AppReducer'
 import { log } from '../utils/logger'
-import { APP_DESCRIPTION } from '../constants';
+import { APP_DESCRIPTION } from '../constants'
 
 const initialState = {
   modal: {},
   inputText: '',
   alert: {
     text: APP_DESCRIPTION,
-    status: 'info',
+    status: 'info'
   },
   output: null,
-  isSubmitting: null,
+  isSubmitting: null
 }
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = ({
   children
 }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState)
 
   // Actions for changing state
-  function setModal(data) {
+  function setModal (data) {
     dispatch({
       type: 'UPDATE_MODAL',
       payload: data
-    });
+    })
   }
 
-  function setInputText(data) {
+  function setInputText (data) {
     dispatch({
       type: 'UPDATE_INPUT_TEXT',
       payload: data
-    });
+    })
   }
 
-  function setIsSubmitting(data) {
+  function setIsSubmitting (data) {
     dispatch({
       type: 'UPDATE_IS_SUBMITTING',
       payload: data
-    });
+    })
   }
 
-  function setAlert(data) {
+  function setAlert (data) {
     dispatch({
       type: 'UPDATE_ALERT',
       payload: data
-    });
+    })
   }
 
-  function setOutput(data) {
+  function setOutput (data) {
     dispatch({
       type: 'UPDATE_OUTPUT',
       payload: data
-    });
+    })
   }
 
   useEffect(() => {
     log('state', 'rgb(217, 38, 169)', state)
   }, [state])
 
-  return ( <GlobalContext.Provider value = {
+  return (
+    <GlobalContext.Provider value={
       {
         ...state,
         setModal,
         setInputText,
         setIsSubmitting,
         setAlert,
-        setOutput,
+        setOutput
       }
-    } > {
+    }
+    > {
       children
-    } </GlobalContext.Provider>
+    }
+    </GlobalContext.Provider>
   )
 }
