@@ -6,6 +6,20 @@ import Output from '../components/Output'
 import Footer from '../components/Footer'
 
 export default function Home () {
+  const construction = true
+  if (construction) {
+    return (
+      <>
+        <Header />
+        <div className='flex flex-col h-screen justify-between'>
+          <div className='text-center text-3xl pt-20'>
+            Under Construction
+          </div>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
