@@ -2,4 +2,4 @@
 
 https://simple-gpt.vercel.app/
 
-Ask GPT to explain anything in simple terms
+Ask GPT-3 to explain anything in simple terms
