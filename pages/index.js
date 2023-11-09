@@ -6,7 +6,7 @@ import Output from '../components/Output'
 import Footer from '../components/Footer'
 
 export default function Home () {
-  const construction = false
+  const construction = true
   if (construction) {
     return (
       <>

@@ -23,6 +23,8 @@ const handleInput = async (req, res) => {
     return
   }
 
+  return
+
   const json = req.body
   const inputText = _get(json, 'inputText')
 
